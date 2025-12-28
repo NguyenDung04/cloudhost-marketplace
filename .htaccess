@@ -1,0 +1,65 @@
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R]
+
+RewriteRule ^admin/dashboard$ /admin/dashboard.php [L]
+RewriteRule ^admin/activity-logs$ /admin/logs/activity-logs.php [L]
+RewriteRule ^admin/settings$ /admin/settings.php [L] 
+
+RewriteRule ^admin/user-manager$ /admin/user_manager.php [L]
+
+RewriteRule ^admin/history/history-recharge$ /admin/history/history_recharge.php [L]
+RewriteRule ^admin/history/history-buy-hosting$ /admin/history/history_buy_hosting.php [L]
+RewriteRule ^admin/history/card-history$ /admin/history/card_history.php [L]
+RewriteRule ^admin/history/orders$ /admin/history/orders.php [L]
+RewriteRule ^admin/history/invoices$ /admin/history/invoices.php [L]
+RewriteRule ^admin/history/purchased-cloudvps$ /admin/history/purchased-cloudvps.php [L]
+
+RewriteRule ^admin/features/discount$ /admin/features/discount.php [L]
+RewriteRule ^admin/features/ranks$ /admin/features/ranks.php [L]
+RewriteRule ^admin/features/posts$ /admin/features/posts.php [L]
+
+RewriteRule ^admin/bank/user-banks$ /admin/bank/user-banks.php [L] 
+
+RewriteRule ^admin/package/package-hosting$ /admin/package/package_hosting.php [L]
+RewriteRule ^admin/package/package-cloudvps$ /admin/package/package_cloudvps.php [L]
+
+RewriteRule ^admin/cloudvps/server-hosting$ /admin/cloudvps/server_hosting.php [L]
+RewriteRule ^admin/cloudvps/operating-system$ /admin/cloudvps/operating_system.php [L]
+RewriteRule ^admin/cloudvps/addon$ /admin/cloudvps/addon.php [L]
+
+RewriteRule ^client/affiliates$ /pages/affiliates/affiliate.php [L]
+RewriteRule ^home$ /pages/home.php [L]
+RewriteRule ^client/vps-platium$ /pages/cloudvps/vps-platium.php [L]
+RewriteRule ^client/vps-order$ /pages/cloudvps/vps-order.php [L]
+RewriteRule ^client/vps-historys$ /pages/cloudvps/vps-history.php [L]
+RewriteRule ^client/vps-bills$ /pages/cloudvps/vps-bill.php [L]
+RewriteRule ^client/invoice/([0-9]+)$ /pages/cloudvps/vps-invoice.php?id=$1 [L]
+RewriteRule ^client/historys/vps$ /pages/cloudvps/historys.php [L]
+RewriteRule ^client/profile$ /pages/auth/profile.php [L]
+RewriteRule ^auth/login$ /pages/auth/login.php [L]
+RewriteRule ^auth/register$ /pages/auth/register.php [L]
+RewriteRule ^auth/recover-pw$ /pages/auth/auth-recover-pw.php [L]
+RewriteRule ^client/blogs$ /pages/blogs/blog.php [L]
+RewriteRule ^client/deposit$ /pages/recharges/recharge-bank.php [L]
+RewriteRule ^client/card$ /pages/recharges/recharge-card.php [L]
+RewriteRule ^client/history/hosting$ /pages/hosting/history-hosting.php [L]
+RewriteRule ^client/chat-ai$ /pages/chatai/chat-ai.php [L]
+
+#ID URL
+RewriteRule ^client/package-hosting/([A-Za-z0-9-]+) /pages/hosting/package-hosting.php?name_server=$1 [L]
+RewriteRule ^client/hosting-order/([A-Za-z0-9-]+) /pages/hosting/order-hosting.php?id=$1 [L]
+RewriteRule ^client/vps-order/([A-Za-z0-9-]+) /pages/cloudvps/vps-order.php?id=$1 [L]
+RewriteRule ^client/view-blog/([A-Za-z0-9-]+) /pages/blogs/view-blog.php?slug=$1 [L]
+RewriteRule ^client/vps-manage/([A-Za-z0-9-]+) /pages/cloudvps/vps-manage.php?id=$1 [L]
+RewriteRule ^client/hosting-manage/([A-Za-z0-9-]+) /pages/hosting/manage-hosting.php?id=$1 [L]
+
+
+RewriteRule ^ajax/auth/login$ /ajax/auth/login.php [L]
+RewriteRule ^ajax/auth/register$ /ajax/auth/register.php [L]
+RewriteRule ^ajax/auth/changepass$ /ajax/auth/change-pass.php [L]
+RewriteRule ^ajax/auth/update_notification$ /ajax/auth/update-tb.php [L]
+RewriteRule ^ajax/auth/recover-pw$ /ajax/auth/recover-pw.php [L]
+
+ErrorDocument 404 /pages/error/404.php
+ErrorDocument 500 /pages/error/500.php
